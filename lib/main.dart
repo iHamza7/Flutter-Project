@@ -5,6 +5,7 @@ void main() {
     MaterialApp(
       title: "First APP",
       home: MyApp(),
+      theme: ThemeData(primarySwatch: Colors.purple),
     ),
   );
 }
@@ -17,6 +18,24 @@ class MyApp extends StatelessWidget {
         title: Text("Login Page"),
       ),
       body: Container(),
+      drawer: Drawer(
+        child: ListView(padding: EdgeInsets.zero, children: <Widget>[
+          DrawerHeader(
+            child: Text("i am here"),
+            decoration: BoxDecoration(color: Colors.purple),
+          ),
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text("Account"),
+            subtitle: Text('personal'),
+            trailing: Icon(Icons.edit),
+          ),
+        ]),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit),
+      ),
     );
   }
 }
