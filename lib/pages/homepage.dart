@@ -5,6 +5,10 @@ import 'package:oldpro/drawer.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'package:oldpro/utils/constants.dart';
+
+import 'login_page.dart';
+
 class MyApp extends StatefulWidget {
   @override
   State<MyApp> createState() => _MyAppState();
@@ -37,9 +41,18 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      appBar: AppBar(
-        title: Text("Login Page"),
-      ),
+      appBar: AppBar(title: Text("Drinks "), actions: [
+        IconButton(
+          onPressed: () {
+            Constants.prefs.setBool("loggedIn", false);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => LoginPage()),
+            );
+          },
+          icon: Icon(Icons.exit_to_app),
+        )
+      ]),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: data != null

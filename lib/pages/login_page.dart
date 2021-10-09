@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:oldpro/utils/constants.dart';
 
 import '../bg_image.dart';
 import 'homepage.dart';
@@ -62,6 +63,8 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       RaisedButton(
                         onPressed: () {
+                          Constants.prefs.setBool("loggedIn", true);
+
                           Navigator.push(
                             context,
                             MaterialPageRoute(
