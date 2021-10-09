@@ -15,7 +15,6 @@ class NameCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset("assets/bg.jpg"),
         SizedBox(
           height: 20,
         ),

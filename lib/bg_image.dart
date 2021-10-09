@@ -1,0 +1,15 @@
+// ignore_for_file: use_key_in_widget_constructors
+
+import 'package:flutter/material.dart';
+
+class BgImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(
+      "assets/bg.jpg",
+      fit: BoxFit.cover,
+      // color: Colors.black.withOpacity(0.7),
+      //colorBlendMode: BlendMode.darken,
+    );
+  }
+}
